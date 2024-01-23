@@ -32,6 +32,3 @@ pr:
     include:
     - '*'
   maxConcurrent: 1
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'build'
