@@ -5,8 +5,8 @@ pool:
   vmImage: 'ubuntu-latest'
 
 jobs:
-- job: Build
-  displayName: 'Build Job'
+- job: Test
+  displayName: 'Test Job'
   steps:
   - checkout: self
   - task: NodeTool@0
@@ -25,3 +25,11 @@ jobs:
       pathtoPublish: '$(System.DefaultWorkingDirectory)/dist'
       artifactName: 'drop'
       publishLocation: 'Container'
+
+pr:
+  branches:
+    include:
+    - '*'
+  maxConcurrent: 1
+
+
