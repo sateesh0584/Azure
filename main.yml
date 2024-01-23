@@ -1,15 +1,14 @@
 trigger:
 - main
 
-pool:
-  vmImage: 'ubuntu-latest'
-
-# Limit concurrency to 1 for this pipeline
 pr:
   branches:
     include:
     - '*'
   maxConcurrent: 1
+
+pool:
+  vmImage: 'ubuntu-latest'
 
 jobs:
 - job: Test
