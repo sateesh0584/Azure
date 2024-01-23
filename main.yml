@@ -26,10 +26,9 @@ jobs:
       artifactName: 'drop'
       publishLocation: 'Container'
 
+# Limit concurrency to 1 for this pipeline
 pr:
   branches:
     include:
     - '*'
   maxConcurrent: 1
-
-
