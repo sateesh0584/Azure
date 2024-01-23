@@ -4,6 +4,13 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
+# Limit concurrency to 1 for this pipeline
+pr:
+  branches:
+    include:
+    - '*'
+  maxConcurrent: 1
+
 jobs:
 - job: Test
   displayName: 'Test Job'
@@ -25,10 +32,3 @@ jobs:
       pathtoPublish: '$(System.DefaultWorkingDirectory)/dist'
       artifactName: 'drop'
       publishLocation: 'Container'
-
-# Limit concurrency to 1 for this pipeline
-pr:
-  branches:
-    include:
-    - '*'
-  maxConcurrent: 1
