@@ -5,7 +5,7 @@ pr:
   branches:
     include:
     - '*'
-  maxConcurrent: 1
+  maxConcurrent
 
 pool:
   vmImage: 'ubuntu-latest'
